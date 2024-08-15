@@ -118,8 +118,10 @@ def confirmar_pedido(masa, salsa, ingredientes):
     confirmacion = input("¿Deseas confirmar el pedido? (si/no): ")
     if confirmacion.lower() == "si":
         print("Pedido confirmado. ¡Gracias por tu compra!")
-    else:
+    elif confirmacion.lower() == "no":
         print("Pedido cancelado.")
+    else:
+        print("Ingrese una respuesta valida.")
 
 def main():
     masa = ""
