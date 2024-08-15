@@ -21,6 +21,8 @@ def elegir_masa():
     Parámetros:
     - masas (list): Listado de las masas disponibles.
     - eleccion (str): Variable que almacena la masa seleccionada.
+
+    Return: masa seleccionada
     """
 
     masas = ["Masa Tradicional", "Masa Delgada", "Masa con Bordes de Queso"]
@@ -31,6 +33,17 @@ def elegir_masa():
     return masas[eleccion - 1]
 
 def elegir_salsa():
+
+    """
+    Se elige el tipo de salsa para la pizza.
+
+    Parámetros:
+    - salsas (list): Listado de las salsas disponibles.
+    - eleccion (str): Variable que almacena la salsa seleccionada.
+
+    Return: salsa seleccionada
+    """
+
     salsas = ["Salsa de Tomate", "Salsa Alfredo", "Salsa Barbecue", "Salsa Pesto"]
     print("Tipos de salsa disponibles:")
     for i, salsa in enumerate(salsas, 1):
@@ -39,6 +52,16 @@ def elegir_salsa():
     return salsas[eleccion - 1]
 
 def agregar_ingredientes(ingredientes_actuales):
+    """
+    Se agregan los ingredientes solidos para la pizza.
+
+    Parámetros:
+    - Ingredientes_disponibles (list): Listado de los ingredientes disponibles.
+    - eleccion (str): Variable que almacena el ingrediente seleccionado por el usuario.
+
+    Return: ingredientes_actuales, que almacena los ingredientes seleccionados.
+    """
+
     ingredientes_disponibles = ["Tomate", "Champiñones", "Aceituna", "Cebolla", "Pollo", "Jamón", "Carne", "Tocino", "Queso"]
     print("Ingredientes disponibles:")
     for i, ingrediente in enumerate(ingredientes_disponibles, 1):
@@ -50,6 +73,18 @@ def agregar_ingredientes(ingredientes_actuales):
     return ingredientes_actuales
 
 def eliminar_ingredientes(ingredientes_actuales):
+    
+    """
+    Se agregan los ingredientes solidos agregados en la pizza anteriormente, pero que ya no se quieren.
+
+    Parámetros:
+    - Ingrediente_seleccionado (list): almacena los ingredientes selecionados para eliminar de los ingredientes agregados en la pizza.
+    - eleccion (str): Variable que almacena el ingrediente seleccionado por el usuario para eliminar.
+    - ingredientes_actuales (list): Listado que almacena los ingredientes actualizados luego de eliminar el seleccionado anteriormente.
+
+    Return: ingredientes_actuales, que almacena los ingredientes actualizados despues de eliminar los que no se quieren.
+    """
+
     print("Ingredientes actuales:")
     for i, ingrediente in enumerate(ingredientes_actuales, 1):
         print(f"{i}. {ingrediente}")
@@ -59,11 +94,25 @@ def eliminar_ingredientes(ingredientes_actuales):
     return ingredientes_actuales
 
 def mostrar_ingredientes(ingredientes_actuales):
+    """
+    Se muestran los ingredientes solidos agregados en la pizza anteriormente.
+
+    Return: Listado de ingredientes seleccionados.
+    """
     print("Ingredientes actuales en la pizza:")
     for ingrediente in ingredientes_actuales:
         print(f"- {ingrediente}")
 
 def confirmar_pedido(masa, salsa, ingredientes):
+    """
+    Se muestran los detalles finales del pedido, la masa seleccionada, la salsa seleccionada, y los ingredientes seleccionados, ademas del tiempo de espera.
+
+    Parámetros:
+    - tiempo_estimado (int): Variable que almacena la operacion del tiempo que demorara el pedido.
+    - confirmacion (str): variable que almacena la decision de confirmar el pedido como esta.
+
+    Return: Estado del pedido.
+    """
     tiempo_estimado = 20 + 2 * len(ingredientes)
     print(f"Tu pizza con {masa}, {salsa} y los siguientes ingredientes: {', '.join(ingredientes)} estará lista en {tiempo_estimado} minutos.")
     confirmacion = input("¿Deseas confirmar el pedido? (si/no): ")
